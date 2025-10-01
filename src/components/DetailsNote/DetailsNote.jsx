@@ -25,6 +25,7 @@ import ChatBody from "../ui/Chatbot/ChatBody/ChatBody";
 import MessageRow from "../ui/Chatbot/MessageRow/MessageRow";
 import Message from "../ui/Chatbot/Message/Message";
 import ChatMessage from "../ui/Chatbot/ChatMessage/ChatMessage";
+import ChatFooter from "../ui/Chatbot/ChatFooter/ChatFooter";
 
 const DetialsNote = () => {
   const chatBodyRef = useRef();
@@ -242,6 +243,8 @@ const DetialsNote = () => {
             ))}
           </MessageRow>
         </ChatBody>
+        {/* Chatbot Footer */}
+        <ChatFooter></ChatFooter>
       </ChatbotPopup>
     </>
   );
