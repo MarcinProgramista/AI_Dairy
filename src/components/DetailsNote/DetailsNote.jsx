@@ -22,6 +22,7 @@ import ChatbotIcon from "../ui/Chatbot/ChatbotIcon/ChatbotIcon";
 import LogoText from "../ui/Chatbot/LogoText/LogoText";
 import ButtonHeader from "../ui/Chatbot/ButtonHeader/ButtonHeader";
 import ChatBody from "../ui/Chatbot/ChatBody/ChatBody";
+import MessageRow from "../ui/Chatbot/MessageRow/MessageRow";
 
 const DetialsNote = () => {
   const chatBodyRef = useRef();
@@ -228,7 +229,9 @@ const DetialsNote = () => {
             keyboard_arrow_down
           </ButtonHeader>
         </ChatHeader>
-        <ChatBody ref={chatBodyRef}></ChatBody>
+        <ChatBody ref={chatBodyRef}>
+          <MessageRow $role={"model"}></MessageRow>
+        </ChatBody>
       </ChatbotPopup>
     </>
   );
