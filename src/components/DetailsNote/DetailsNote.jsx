@@ -42,7 +42,7 @@ const DetialsNote = () => {
     {
       hideInChat: true,
       role: "model",
-      text: "App: Dairy , Created by Czapla Marcin, it is aplication to put your thoughts",
+      text: "App: Dairy , Created by Czapla Marcin. It is aplication to put your thoughts. Especialy when you want to put note from book or film or other special notes. Keep in mind to check info from CoatchAI..",
     },
   ]);
 
