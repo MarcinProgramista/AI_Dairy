@@ -230,7 +230,9 @@ const DetialsNote = () => {
           </ButtonHeader>
         </ChatHeader>
         <ChatBody ref={chatBodyRef}>
-          <MessageRow $role={"model"}></MessageRow>
+          <MessageRow $role={"model"}>
+            <ChatbotIcon $category={getCategoryFromPath(location.pathname)} />
+          </MessageRow>
         </ChatBody>
       </ChatbotPopup>
     </>
