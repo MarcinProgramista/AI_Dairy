@@ -56,6 +56,7 @@ const SendButton = styled.button`
   height: 35px;
   width: 35px;
   border: none;
+  padding: 10px;
   flex-shrink: 0;
   color: #fff;
   cursor: pointer;
@@ -76,6 +77,7 @@ const FormChat = styled.form`
   align-items: center;
   position: relative;
   background: #d8d1ba;
+  margin-bottom: 10px;
   border-radius: 32px;
   outline: 1px solid #cccce5;
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.06);

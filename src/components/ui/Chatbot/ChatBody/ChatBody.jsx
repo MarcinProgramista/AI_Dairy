@@ -5,6 +5,9 @@ const ChatBody = styled.div`
   flex-direction: column;
   gap: 20px;
   height: 460px;
+  flex: 1;
+  overflow-y: auto;
+  padding: 1rem;
   overflow-y: auto;
   margin-bottom: 82px;
   padding: 25px 22px;

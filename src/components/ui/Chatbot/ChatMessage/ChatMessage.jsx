@@ -1,11 +1,11 @@
 import styled, { css } from "styled-components";
 import ChatbotIcon from "../ChatbotIcon/ChatbotIcon";
 
-const ChatMessage = ({ chat }) => {
+const ChatMessage = ({ chat, $category }) => {
   return (
     !chat.hideInChat && (
       <MessageRow $role={chat.role} $isError={chat.isError}>
-        {chat.role === "model" && <ChatbotIcon />}
+        {chat.role === "model" && <ChatbotIcon $category={$category} />}
         <Message $user={chat.role === "user"} $bot={chat.role === "model"}>
           {chat.text}
         </Message>
@@ -31,6 +31,7 @@ const Message = styled.p`
   ${({ $bot }) =>
     $bot &&
     css`
+      color: black;
       background: wheat;
       border-radius: 15px 15px 15px 3px;
     `}
@@ -38,6 +39,7 @@ const Message = styled.p`
 // Styled component for the container div
 const MessageRow = styled.div`
   display: flex;
+  flex-direction: column;
   gap: 8px;
   ${({ $role }) =>
     $role === "user" &&

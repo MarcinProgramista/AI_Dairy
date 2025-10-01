@@ -8,7 +8,7 @@ const WrapperNotesDetails = styled.div`
   position: relative;
   display: grid;
   grid-template-rows: 0.25fr 1fr;
-  width: 95%;
+  width: 70%;
   margin: 20px;
   font-family: "Dancing Script", cursive;
   ${({ $category }) =>

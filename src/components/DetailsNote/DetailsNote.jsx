@@ -26,6 +26,7 @@ import MessageRow from "../ui/Chatbot/MessageRow/MessageRow";
 import Message from "../ui/Chatbot/Message/Message";
 import ChatMessage from "../ui/Chatbot/ChatMessage/ChatMessage";
 import ChatFooter from "../ui/Chatbot/ChatFooter/ChatFooter";
+import ChatForm from "../ui/Chatbot/ChatForm/ChatForm";
 
 const DetialsNote = () => {
   const chatBodyRef = useRef();
@@ -41,9 +42,15 @@ const DetialsNote = () => {
     {
       hideInChat: true,
       role: "model",
-      text: "App: Dairy , Created by Czapla Marcin",
+      text: "App: Dairy , Created by Czapla Marcin, it is aplication to put your thoughts",
     },
   ]);
+
+  useEffect(() => {
+    if (chatBodyRef.current) {
+      chatBodyRef.current.scrollTop = chatBodyRef.current.scrollHeight;
+    }
+  }, [chatHistory]);
   useEffect(() => {
     let isMounted = true;
 
@@ -137,7 +144,7 @@ const DetialsNote = () => {
       updateHistory(error.message, true);
     }
   };
-  console.log(chatHistory[1].text);
+  //console.log(chatHistory[1].text);
 
   return (
     <>
@@ -211,10 +218,11 @@ const DetialsNote = () => {
           </SpanClose>
         )}
       </ButtonToggel>
+
+      {/* {isOpen && ( */}
       <ChatbotPopup
         $isOpen={isOpen}
         $category={getCategoryFromPath(location.pathname)}
-        onClick={() => setIsOpen(!isOpen)}
       >
         {/* Chatbot Header */}
         <ChatHeader>
@@ -237,15 +245,27 @@ const DetialsNote = () => {
             <Message $bot>
               Hey there 👋 <br /> How can I help you today?
             </Message>
-            {/* Render the chat history dynamically */}
-            {chatHistory.map((chat, index) => (
-              <ChatMessage key={index} chat={chat} />
-            ))}
           </MessageRow>
+          {/* Render the chat history dynamically */}
+          {chatHistory.map((chat, index) => (
+            <ChatMessage
+              key={index}
+              chat={chat}
+              $category={getCategoryFromPath(location.pathname)}
+            />
+          ))}
         </ChatBody>
         {/* Chatbot Footer */}
-        <ChatFooter></ChatFooter>
+        <ChatFooter>
+          <ChatForm
+            chatHistory={chatHistory}
+            setChatHistory={setChatHistory}
+            generateBotResponse={generateBotResponse}
+          />
+          <i>Coach AI. can make mistakes. So check recived info</i>
+        </ChatFooter>
       </ChatbotPopup>
+      {/* )} */}
     </>
   );
 };
