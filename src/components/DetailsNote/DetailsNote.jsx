@@ -24,6 +24,7 @@ import ButtonHeader from "../ui/Chatbot/ButtonHeader/ButtonHeader";
 import ChatBody from "../ui/Chatbot/ChatBody/ChatBody";
 import MessageRow from "../ui/Chatbot/MessageRow/MessageRow";
 import Message from "../ui/Chatbot/Message/Message";
+import ChatMessage from "../ui/Chatbot/ChatMessage/ChatMessage";
 
 const DetialsNote = () => {
   const chatBodyRef = useRef();
@@ -143,7 +144,6 @@ const DetialsNote = () => {
         <InnerWrapperNotesDetails
           $category={getCategoryFromPath(location.pathname)}
         >
-          {chatHistory.title}
           <StyledTitle
             $datails
             $category={getCategoryFromPath(location.pathname)}
@@ -236,6 +236,10 @@ const DetialsNote = () => {
             <Message $bot>
               Hey there 👋 <br /> How can I help you today?
             </Message>
+            {/* Render the chat history dynamically */}
+            {chatHistory.map((chat, index) => (
+              <ChatMessage key={index} chat={chat} />
+            ))}
           </MessageRow>
         </ChatBody>
       </ChatbotPopup>

@@ -1,5 +1,5 @@
 import styled, { css } from "styled-components";
-import ChatbotIcon from "./ChatbotIcon";
+import ChatbotIcon from "../ChatbotIcon/ChatbotIcon";
 
 const ChatMessage = ({ chat }) => {
   return (
