@@ -23,6 +23,7 @@ import LogoText from "../ui/Chatbot/LogoText/LogoText";
 import ButtonHeader from "../ui/Chatbot/ButtonHeader/ButtonHeader";
 import ChatBody from "../ui/Chatbot/ChatBody/ChatBody";
 import MessageRow from "../ui/Chatbot/MessageRow/MessageRow";
+import Message from "../ui/Chatbot/Message/Message";
 
 const DetialsNote = () => {
   const chatBodyRef = useRef();
@@ -232,6 +233,9 @@ const DetialsNote = () => {
         <ChatBody ref={chatBodyRef}>
           <MessageRow $role={"model"}>
             <ChatbotIcon $category={getCategoryFromPath(location.pathname)} />
+            <Message $bot>
+              Hey there 👋 <br /> How can I help you today?
+            </Message>
           </MessageRow>
         </ChatBody>
       </ChatbotPopup>

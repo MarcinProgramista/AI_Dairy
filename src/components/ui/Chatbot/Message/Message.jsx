@@ -17,6 +17,7 @@ const Message = styled.p`
     $bot &&
     css`
       background: wheat;
+      color: black;
       border-radius: 15px 15px 15px 3px;
     `}
 `;
